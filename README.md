@@ -19,22 +19,22 @@ Prepared Statements: For secure database interaction, preventing SQL injection.
 Maven: Manages dependencies and builds the project.
 
 📂 Project Structure Employee-Management-System/ ├── src/
-│ ├── com/
-│ │ ├── client/
-│ │ │ └── Client.java # Main class to run the application
-│ │ ├── controller/
-│ │ │ └── Controller.java # Controls the interaction between client and services
-│ │ ├── dao/
-│ │ │ └── AllEmployeeDetails.java # Database interaction for fetching employee data
-│ │ ├── entity/
-│ │ │ └── Employee.java # Employee data model
-│ │ ├── services/
-│ │ │ └── EmployeeServices.java # Business logic for managing employees
-│ │ ├── utility/
-│ │ │ └── Utility.java # Helper functions for database interaction and validation
-│ │ │ └── ValidationUtility.java # Helper functions for input validation
-├── README.md # Project documentation
-└── pom.xml # Maven project file for dependency management
+com
+│
+├── controller
+│   └── Controller.java           # Handles business logic and coordinates services
+├── dao
+│   └── AllEmployeeDetails.java   # Data Access Object for interacting with the database
+├── entity
+│   └── Employee.java             # Employee entity class containing employee details
+├── services
+│   └── EmployeeServices.java     # Service layer for fetching and manipulating employee data
+├── utlity
+│   ├── Utility.java              # Utility class for database connection and query execution
+│   └── ValidationUtility.java    # Validation class for input checks
+└── client
+    └── Client.java               # Main entry point for testing operations
+
 
 ✨ How It Works
 
