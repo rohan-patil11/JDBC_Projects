@@ -38,7 +38,7 @@ public class EmployeeServices {
 		return ee;	
 	}
 	
-	Employee FetchEmployeeDetailsByName(String Name) throws Exception {
+	static public Employee FetchEmployeeDetailsByName(String Name) throws Exception {
 		ArrayList<Employee> e1 = AllEmployeeDetails.AllEmployees();
 		Employee ee = new Employee();
 		for (Employee employee : e1) {
@@ -54,19 +54,26 @@ public class EmployeeServices {
 			return ee;
 	}
 	
-	Employee getEmployeeDetailsBySalary(int Salary) {
-		ArrayList<Employee> e1 = AllEmployeeDetails.AllEmployees();
-		Employee ee = new Employee();
-		for (Employee employee : e1) {
-			if(Salary ==employee.getEmpSalary()) {
-				ee.setEmpId(employee.getEmpId());
-				ee.setEmpName(employee.getEmpName());
-				ee.setEmpSalary(employee.getEmpSalary());
-				System.out.println("Empid="+ ee.getEmpId());
-				System.out.println("EmpName="+ ee.getEmpName());
-				System.out.println("EmpSalary="+ ee.getEmpSalary());
+	public static Employee fetchEmployeeDetailsBySalary(int Salary) {
+		try {
+			ArrayList<Employee> e1 = AllEmployeeDetails.AllEmployees();
+			Employee ee = new Employee();
+			for (Employee employee : e1) {
+				if(Salary ==employee.getEmpSalary()) {
+					ee.setEmpId(employee.getEmpId());
+					ee.setEmpName(employee.getEmpName());
+					ee.setEmpSalary(employee.getEmpSalary());
+					System.out.println("Empid="+ ee.getEmpId());
+					System.out.println("EmpName="+ ee.getEmpName());
+					System.out.println("EmpSalary="+ ee.getEmpSalary());
+					return employee;
+				}
 			}
-		}return null;	
+		}	
+		 catch (Exception e) {
+			e.printStackTrace();
+		} 
+		return null;
 	}
 	static public void deleteEmployeeDetailsByID(int Id) throws Exception{
 			Class.forName("com.mysql.cj.jdbc.Driver");

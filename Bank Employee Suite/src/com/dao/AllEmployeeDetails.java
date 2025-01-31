@@ -17,7 +17,7 @@ public class AllEmployeeDetails {
 			//Class.forName("com.mysql.cj.jdbc.Driver");
 			Utility.LoadDriver("com.mysql.cj.jdbc.Driver");
 			//Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/RPBank","root","root");
-			Connection connection=Utility.connection("jdbc:mysql://localhost:3306/RPBank","root","root");
+			Connection connection=Utility.connection("jdbc:mysql://localhost:3306/RPBank","root","rohan");
 			String sql = "select * from BankEmployees";
 			  PreparedStatement pstmt = Utility.CreatePreStmt(sql, connection);
 			  ResultSet rs = Utility.CreateResultset(pstmt);
